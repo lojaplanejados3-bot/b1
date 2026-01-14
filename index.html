@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brisa Net - Suporte e Internet de Qualidade</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff; /* Branco */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Cores principais: Laranja (#FF6B35), Salmão (#FF8C69), Branco (#FFFFFF) */
+        .header {
+            background-color: #FF8C69; /* Salmão */
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo svg {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .whatsapp-btn {
+            background-color: #FF6B35; /* Laranja */
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .whatsapp-btn svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            text-align: center;
+            background-color: #FF8C69; /* Salmão */
+            color: #ffffff;
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .mission {
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .mission h2 {
+            font-size: 32px;
+            color: #FF6B35; /* Laranja */
+            margin-bottom: 20px;
+        }
+
+        .mission p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .images img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .buttons {
+            background-color: #FF8C69; /* Salmão */
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .buttons h2 {
+            font-size: 28px;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            background-color: #FF6B35; /* Laranja */
+            color: #ffffff;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e55a2b;
+        }
+
+        .btn svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .btn-phone::before { content: "📞"; margin-right: 10px; } /* Suporte técnico */
+        .btn-help::before { content: "👂"; margin-right: 10px; } /* Ouvidoria - ajuda */
+        .btn-bill::before { content: "📊"; margin-right: 10px; } /* Código de barras - 2ª via da fatura */
+        .btn-24h::before { content: "🦉"; margin-right: 10px; } /* Coruja - atendimento 24H */
+        /* Removido .btn-sac::before para usar SVG inline */
+
+        .human-attendance {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .human-attendance .btn {
+            background-color: #ffffff;
+            color: #FF6B35;
+            border: 2px solid #FF6B35;
+        }
+
+        .human-attendance .btn:hover {
+            background-color: #FF6B35;
+            color: #ffffff;
+        }
+
+        .schedule {
+            background-color: #ffffff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .schedule h2 {
+            font-size: 28px;
+            color: #FF6B35;
+            margin-bottom: 20px;
+        }
+
+        .schedule h3 {
+            font-size: 22px;
+            color: #FF8C69;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .schedule p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #FF6B35;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .images {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .mission h2 {
+                font-size: 24px;
+            }
+
+            .buttons h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Vento suave: linhas curvas representando brisa -->
+                <path d="M10 50 Q20 40 30 50 Q40 60 50 50 Q60 40 70 50 Q80 60 90 50" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <path d="M10 60 Q20 50 30 60 Q40 70 50 60 Q60 50 70 60 Q80 70 90 60" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <path d="M10 70 Q20 60 30 70 Q40 80 50 70 Q60 60 70 70 Q80 80 90 70" stroke="#ffffff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            </svg>
+            Brisa Net
+        </div>
+        <button class="whatsapp-btn" onclick="window.open('https://wa.me/5511949407277', '_blank')">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <!-- Logo oficial do WhatsApp (verde) -->
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" fill="#25D366"/>
+            </svg>
+            WhatsApp
+        </button>
+    </header>
+
+    <section class="hero section">
+        <h1>Suporte Brisanet</h1>
+        <p>Fale com a Brisanet pelo WhatsApp e conte com nossa inteligência artificial para te ajudar com assuntos de conta, suporte técnico e muito mais. Se preferir, você também pode falar diretamente com nossos atendentes humanos, prontos para te atender!</p>
+    </section>
+
+    <section class="mission section">
+        <h2>Nossa Missão</h2>
+        <p>Na Brisanet, nossa missão é levar internet de alta qualidade a preços acessíveis, conectando pessoas e comunidades com velocidade, estabilidade e confiança. Estamos comprometidos em oferecer a melhor experiência digital aos nossos clientes, com atendimento eficiente, tecnologia de ponta e soluções que facilitam o dia a dia.</p>
+        <div class="images">
+            <!-- Imagens reais de famílias compartilhando momentos usando internet (URLs de Unsplash, gratuitas e públicas) -->
+            <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200&q=80" alt="Família compartilhando momentos com internet">
+            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200&q=80" alt="Pessoas conectadas online">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200&q=80" alt="Momentos digitais em família">
+        </div>
+    </section>
+
+    <section class="buttons section">
+        <h2>Como Podemos Ajudar?</h2>
+        <div class="button-group">
+            <a href="https://wa.me/5511949407277" class="btn btn-phone" target="_blank">Suporte Técnico</a>
+            <a href="https://wa.me/5511949407277" class="btn btn-help" target="_blank">Ajuda</a>
+            <a href="https://wa.me/5511949407277" class="btn btn-bill" target="_blank">2ª Via da Fatura</a>
+            <a href="https://wa.me/5511949407277" class="btn btn-24h" target="_blank">Atendimento 24H</a>
+            <a href="https://wa.me/5511949407277" class="btn btn-sac" target="_blank">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Logo oficial do WhatsApp (verde) para SAC -->
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" fill="#25D366"/>
+                </svg>
+                SAC
+            </a>
+        </div>
+        <div class="human-attendance">
+            <a href="https://wa.me/5511949407277" class="btn" target="_blank">Atendimento Humanizado</a>
+        </div>
+    </section>
+
+    <section class="schedule section">
+        <h2>Horário de Atendimento</h2>
+        <h3>Atendimento Geral</h3>
+        <p>Segunda a Sexta: 09h00 às 18h00</p>
+        <p>Sábado: 09h00 às 13h00</p>
+        <h3>Suporte Técnico</h3>
+        <p>Disponível 24 horas por dia, 7 dias por semana</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Brisa Net. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
